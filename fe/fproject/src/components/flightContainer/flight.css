@@ -1,0 +1,16 @@
+.central {
+    background-image: url('images.jpg');
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    margin: 250px auto;
+    opacity: 0.3;
+  }
+  
+ .inner-container{
+    display: flex;
+ }
