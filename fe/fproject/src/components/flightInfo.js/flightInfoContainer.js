@@ -4,7 +4,7 @@ import './flightinfo.css';
 
 function FlightInfo({ data }) {
   // Estrai le informazioni desiderate dai dati della chiamata API
-  const flightStatus = data?.flightStatuses?.[0]?.airline;
+  const flightStatus = data?.flightStatuses;
   const departureAirport = data?.appendix?.airports?.[0]?.name;
   const arrivalAirport = data?.appendix?.airports?.[1]?.name;
 

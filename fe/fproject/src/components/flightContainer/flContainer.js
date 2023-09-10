@@ -58,10 +58,11 @@ function FlightSearch() {
           value={date}
           onChange={e => setDate(e.target.value)}
         />
+        <button onClick={getFlightInfo}>Search Flight</button>
       </div>
-      <button onClick={getFlightInfo}>Search Flight</button>
+      
       {flightData && (
-        <div>
+        <div className='response-div'>
           <FlightInfo/>
         </div>
       )}

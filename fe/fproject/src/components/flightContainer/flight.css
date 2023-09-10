@@ -4,6 +4,7 @@
     width: 100%;
     background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-size: cover;
@@ -13,4 +14,10 @@
   
  .inner-container{
     display: flex;
+ }
+
+
+ .response-div{
+   background-color: white;
+   border-radius: 5px;
  }

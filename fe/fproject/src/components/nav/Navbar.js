@@ -16,7 +16,7 @@ class MyNavbar extends React.Component {
               <Nav.Link href="#home" className='text-white'>Meteo</Nav.Link>
             </Nav>
             <Nav className="ms-auto">
-              <Nav.Link href="#home" className='text-white'>profilo</Nav.Link>
+              <Nav.Link href="#home" className='text-white'>Profilo</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

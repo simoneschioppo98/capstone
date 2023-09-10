@@ -1,3 +1,8 @@
 .nav-color{
-    background: linear-gradient(180deg, rgba(13,110,253,1) 0%, rgb(5, 56, 133) 62%, rgba(0,0,255,1) 96%);
+    background-image: linear-gradient(to bottom, #0d6efd, #0360f9, #0d51f4, #1d40ee, #2c2ce7);
+}
+
+.text-white{
+    font-weight: bold;
+    font-size: 25px;
 }
