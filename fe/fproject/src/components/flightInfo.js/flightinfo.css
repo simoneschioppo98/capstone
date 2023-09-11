@@ -1,0 +1,27 @@
+.top-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.status-landed {
+    background-color: green; /* Colore per "Landed" */
+    color: white;
+    font-weight: bold;
+  }
+  
+  .status-in-air {
+    background-color: blue; /* Colore per "In Air" */
+    color: white;
+    font-weight: bold;
+  }
+  
+  .status-scheduled {
+    background-color: orange; /* Colore per "Scheduled" */
+    color: white;
+    font-weight: bold;
+  }

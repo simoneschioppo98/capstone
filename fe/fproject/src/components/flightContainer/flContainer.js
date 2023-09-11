@@ -19,7 +19,7 @@ function FlightSearch() {
     formattedDate = formattedDate.replace("-", "/");
     console.log(formattedDate);
 
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/${carrier}/${flightNumber}/arr/2023/09/09?appId=5a041ee5&appKey=642da6f80725f2a9b647e91775784030&utc=false`, {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/${carrier}/${flightNumber}/arr/${formattedDate}?appId=5a041ee5&appKey=642da6f80725f2a9b647e91775784030&utc=false`, {
       method: "GET",
     })
     .then(response => {
@@ -63,7 +63,7 @@ function FlightSearch() {
       
       {flightData && (
         <div className='response-div'>
-          <FlightInfo/>
+          <FlightInfo data= {flightData}/>
         </div>
       )}
     </div>
