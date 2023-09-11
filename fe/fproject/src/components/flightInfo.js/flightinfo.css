@@ -1,3 +1,6 @@
+.results{
+}
+
 .top-info{
     display: flex;
     justify-content: space-between;
@@ -8,20 +11,87 @@
     flex-direction: column;
 }
 
+.first-text{
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.middle-info{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+hr{
+    margin: 0;
+}
+
+
 .status-landed {
     background-color: green; /* Colore per "Landed" */
     color: white;
+    font-size: 20px;
     font-weight: bold;
+    padding: 25px;
   }
   
   .status-in-air {
     background-color: blue; /* Colore per "In Air" */
     color: white;
+    font-size: 20px;
     font-weight: bold;
+    padding: 25px;
   }
   
   .status-scheduled {
     background-color: orange; /* Colore per "Scheduled" */
     color: white;
+    font-size: 20px;
     font-weight: bold;
+    padding: 25px;
+  }
+
+  .left{
+    display: inline-block;
+    border-right: 1px solid black;
+    text-align: center;
+    margin-top: 50px;
+    width: 500px;
+
+  }
+
+  .right{
+    display: inline-block;
+    text-align: center;
+    width: 500px;
+  }
+
+  .detail-info{
+    background-color: #ebedf1;
+    color: black;
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+
+  .airport-info{
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .flight-times{
+    display: flex;
+  }
+
+
+  .flight-time{
+    margin-right: 20px;
+    background-color: #ebedf1;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  .flight-time:first-child{
+    margin-left: 55px;
+    border-right: 1px solid black;
   }

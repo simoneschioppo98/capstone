@@ -1,5 +1,7 @@
 import React from 'react';
 import './flightinfo.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 
 function FlightInfo({ data }) {
   // Estrai le informazioni desiderate dai dati della chiamata API
@@ -7,9 +9,13 @@ function FlightInfo({ data }) {
   const departureAirport = data?.appendix?.airports?.[0]?.name;
   const arrivalAirport = data?.appendix?.airports?.[1]?.name;
   const topFlightNumber = data?.flightStatuses[0]?.carrierFsCode;
-  const bottomFlightNumber = data?.flightStatuses[0]?.flightNumber;
+  const bottomFlightNumber = data?.appendix?.airlines[0]?.name;
   const middleDeparture = data?.flightStatuses[0]?.departureAirportFsCode;
   const middleArrival = data?.flightStatuses[0]?.arrivalAirportFsCode;
+  const departureDate = data?.flightStatuses[0]?.departureDate.dateLocal;
+  const actualDeparture = data?.flightStatuses[0]?.operationalTimes?.actualGateDeparture.dateLocal;
+  const arrivalDate = data?.flightStatuses[0]?.arrivalDate.dateLocal;
+  const actualArrival = data?.flightStatuses[0]?.operationalTimes?.actualGateArrival.dateLocal;
 
 
   
@@ -35,23 +41,49 @@ function FlightInfo({ data }) {
      <div className='results'>
       <div className='top-info'>
         <div className='first-info'>
-        <span>{topFlightNumber}</span>
+        <span className='first-text'>{topFlightNumber}</span>
         {bottomFlightNumber ? <span>{bottomFlightNumber}</span> : <span>Numero del volo non disponibile</span>}
         </div>
         <div className='middle-info'>
             <span>{middleDeparture}</span>
+            <FontAwesomeIcon icon={faPlane} />
             <span>{middleArrival}</span>
         </div>
         <div className='status'>
         <p className={`status ${flightStatus === 'L' ? 'status-landed' : flightStatus === 'A' ? 'status-in-air' : flightStatus === 'S' ? 'status-scheduled' : ''}`}>
             Status: {statusText}
         </p>
-
         </div>
       </div>
-      <p className='cazzo'>Status: {statusText}</p>
-      <p>Departure Airport: {departureAirport}</p>
-      <p>Arrival Airport: {arrivalAirport}</p>
+      <hr/>
+      <div className='left'>
+        <span className='detail-info'>Departure</span>
+      <p className='airport-info'>{departureAirport}</p>
+        <div className='flight-times'>
+            <div className='flight-time'>
+              <p>scheduled</p>
+              <span>{departureDate}</span>
+            </div>
+            <div className='flight-time'>
+              <p>actual</p>
+              <span>{actualDeparture}</span>
+            </div>
+        </div>
+      </div>
+      <div className='right'>
+        <span className='detail-info'>Arrival</span>
+      <p  className='airport-info'>{arrivalAirport}</p>
+      <div className='flight-times'>
+            <div className='flight-time'>
+              <p>scheduled</p>
+              <span>{arrivalDate}</span>
+            </div>
+            <div className='flight-time'>
+              <p>actual</p>
+              <span>{actualArrival}</span>
+            </div>
+        </div>
+      </div>
     </div>
       
   );

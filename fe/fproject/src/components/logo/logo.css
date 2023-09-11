@@ -1,7 +1,6 @@
 .logo-div{
     background-color: rgb(13, 110, 253);
     height: 75px;
-    z-index: 1;
     display: flex;
    justify-content: center;
    align-items: center;
@@ -10,5 +9,4 @@
 .logo-edit{
     height: 300px;
     width: 500px;
-    z-index: 3;
 }
