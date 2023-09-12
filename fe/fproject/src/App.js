@@ -1,20 +1,20 @@
 import React from 'react';
 import './App.css';
+import {BrowserRouter as Router, Switch , Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MyNavbar from './components/nav/Navbar';
-import MyLogo from './components/logo/Logo';
-import MyFooter from './components/footer/myfooter';
-import CentralContainer from './components/midContainer/container';
-import NewsCarousel from './components/myCentralCarousel.js/carousel'; // Modifica qui
+import FirstPage from './components/FirstPage/firstPage';
+import MyWeatherPage from './components/WeatherPage/weatherPage';
+
 
 function App() {
   return (
     <>
-      <MyLogo />
-      <MyNavbar />
-      <NewsCarousel /> 
-      <CentralContainer />
-      <MyFooter />
+     <Router>
+      <Routes>
+        <Route path='/'element={<FirstPage/>}/>
+        <Route path = '/meteo' element={MyWeatherPage}/>
+      </Routes>
+     </Router>
     </>
   );
 }

@@ -2,3 +2,9 @@
     height: 1000px;
     width: 100%;
 }
+
+@media (max-width:768px){
+   .mid-container{
+    position: relative;
+   }
+}

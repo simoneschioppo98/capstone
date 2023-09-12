@@ -6,8 +6,8 @@ import { faPlane } from '@fortawesome/free-solid-svg-icons';
 function FlightInfo({ data }) {
   // Estrai le informazioni desiderate dai dati della chiamata API
   const flightStatus = data?.flightStatuses[0]?.status;
-  const departureAirport = data?.appendix?.airports?.[0]?.name;
-  const arrivalAirport = data?.appendix?.airports?.[1]?.name;
+  const departureAirport = data?.appendix?.airports?.[1]?.name;
+  const arrivalAirport = data?.appendix?.airports?.[0]?.name;
   const topFlightNumber = data?.flightStatuses[0]?.carrierFsCode;
   const bottomFlightNumber = data?.appendix?.airlines[0]?.name;
   const middleDeparture = data?.flightStatuses[0]?.departureAirportFsCode;

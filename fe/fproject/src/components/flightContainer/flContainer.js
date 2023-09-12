@@ -39,26 +39,28 @@ function FlightSearch() {
 
   return (
     <div className="central">
-      <div className="inner-container">
-        <input
-          type="text"
-          placeholder='Carrier (e.g AA)'
-          value={carrier}
-          onChange={e => setCarrier(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder='Flight Number'
-          value={flightNumber}
-          onChange={e => setFlightNumber(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder='Date (YYYY-MM-DD)'
-          value={date}
-          onChange={e => setDate(e.target.value)}
-        />
-        <button onClick={getFlightInfo}>Search Flight</button>
+      <div className='medium-container'>
+        <div className="inner-container">
+          <input className='field'
+            type="text"
+            placeholder='Carrier (e.g AA)'
+            value={carrier}
+            onChange={e => setCarrier(e.target.value)}
+          />
+          <input className='field'
+            type="text"
+            placeholder='Flight Number'
+            value={flightNumber}
+            onChange={e => setFlightNumber(e.target.value)}
+          />
+          <input className='field'
+            type="text"
+            placeholder='Date (YYYY-MM-DD)'
+            value={date}
+            onChange={e => setDate(e.target.value)}
+          />
+          <button className='button' onClick={getFlightInfo}>Search Flight</button>
+        </div>
       </div>
       
       {flightData && (
