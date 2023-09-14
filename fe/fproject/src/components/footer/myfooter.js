@@ -1,30 +1,24 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./footer.css"; 
 
+function MyFooter() {
+  const section = useLocation();
+  const [color, setColor] = useState('');
+  
+  useEffect(() => {
+    let currentSection = section.pathname;
 
+    if (currentSection === "/") {
+      setColor('rgb(13, 110, 253)');
+    } else if (currentSection === "/meteo") {
+      setColor('#FF8C00');
+    };
+  }, [section]);
 
-class MyFooter extends Component {
-  componentDidMount() {
-    const currentPage = window.location.pathname;
-    let backgroundColor = "";
-
-    if (currentPage === "/pagina1") {
-      backgroundColor = "blue";
-    } else if (currentPage === "/pagina2") {
-      backgroundColor = "green";
-    }
-
-    this.setState({ backgroundColor });
-  }
-
-  render() {
-    const { backgroundColor } = this.state || {};
-
-    const footerClasses = `footer ${backgroundColor || ""}`;
-
-    return (
-      <footer className={footerClasses}>
-        <div className="footer-content">
+  return (
+    <footer className="footer-color" style={{ backgroundColor: color }}>
+      <div className="footer-content">
         <div className="footer-links">
           <ul>
             <li><a href="/chi-siamo">Chi siamo</a></li>
@@ -42,11 +36,12 @@ class MyFooter extends Component {
       <div className="footer-bottom">
         <p>© 2023 FullStackSky</p>
       </div>
-      </footer>
-    );
-  }
+    </footer>
+  );
 }
 
 export default MyFooter;
+
+
 
 

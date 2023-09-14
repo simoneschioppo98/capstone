@@ -12,7 +12,7 @@ function App() {
      <Router>
       <Routes>
         <Route path='/'element={<FirstPage/>}/>
-        <Route path = '/meteo' element={MyWeatherPage}/>
+        <Route path = '/meteo' element={<MyWeatherPage/>}/>
       </Routes>
      </Router>
     </>
