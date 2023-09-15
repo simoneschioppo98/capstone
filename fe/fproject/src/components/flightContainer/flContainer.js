@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './flight.css';
 import FlightInfo from '../flightInfo.js/flightInfoContainer';
+import axios from 'axios'; // Importa Axios
 
 function FlightSearch() {
   const [carrier, setCarrier] = useState('');
@@ -9,7 +10,6 @@ function FlightSearch() {
   const [flightData, setFlightData] = useState(null);
 
   const getFlightInfo = () => {
-    // Controlla che tutti i campi siano compilati
     if (!carrier || !flightNumber || !date) {
       alert('Compila tutti i campi prima di effettuare la ricerca.');
       return;
@@ -19,22 +19,14 @@ function FlightSearch() {
     formattedDate = formattedDate.replace("-", "/");
     console.log(formattedDate);
 
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/${carrier}/${flightNumber}/arr/${formattedDate}?appId=5a041ee5&appKey=642da6f80725f2a9b647e91775784030&utc=false`, {
-      method: "GET",
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Errore nella richiesta');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      setFlightData(data);
-    })
-    .catch(error => {
-      console.error(error);
-    });
+    axios.get(`https://cors-anywhere.herokuapp.com/https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/${carrier}/${flightNumber}/arr/${formattedDate}?appId=5a041ee5&appKey=642da6f80725f2a9b647e91775784030&utc=false`)
+      .then(response => {
+        console.log(response.data);
+        setFlightData(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
 
   return (
@@ -65,7 +57,7 @@ function FlightSearch() {
       
       {flightData && (
         <div className='response-div'>
-          <FlightInfo data= {flightData}/>
+          <FlightInfo data={flightData} />
         </div>
       )}
     </div>

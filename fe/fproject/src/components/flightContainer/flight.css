@@ -37,6 +37,10 @@
   margin-right: 10px;
 }
 
+.field::placeholder{
+  color: black;
+}
+
 
 
  .button{
