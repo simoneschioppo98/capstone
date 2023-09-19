@@ -13,9 +13,24 @@
     align-items: center;
   }
   
+  .form>input{
+    border-radius: 20px;
+    padding: 5px 6px;
+    text-align: center;
+    width: 300px;
+    
+  }
+
+  .info-button{
+    border-radius: 10px;
+    border: none;
+    margin: 0 10px;
+    background-color: rgb(255, 140, 0);
+    color: white;
+    font-weight: 700;
+  }
   
   .meteo-status-container {
     margin-top: 30px;
   }
-  
 

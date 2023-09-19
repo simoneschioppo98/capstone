@@ -1,3 +1,8 @@
+.section-container{
+    margin: 12px 278px;
+    height: 100%;
+}
+
 .main-section{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -53,4 +58,57 @@
     color: white;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+.today-details{
+    margin-top: 25px;
+    height: 328px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.today-city-informations{
+    text-align: center;
+}
+
+.mid-information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun-info{
+    margin-top: 75px
+}
+
+.sun-info>span{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-right: 10px;
+}
+
+.material-symbols-outlined{
+    color: orange;
+}
+
+.last-details{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.inner-details{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.inner-details>.material-symbols-outlined{
+    color: brown;
+    align-self: center;
+}
+
+.inner-details>span{
+    align-self: center;
+    font-weight: bolder;
 }
