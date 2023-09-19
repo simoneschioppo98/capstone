@@ -1,4 +1,21 @@
-.meteo-container{
+.meteo-container {
     height: 1000px;
     width: 100%;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form {
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  
+  .meteo-status-container {
+    margin-top: 30px;
+  }
+  
+
