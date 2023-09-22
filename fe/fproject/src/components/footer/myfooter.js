@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./footer.css"; 
+import { GithubOutlined } from '@ant-design/icons';
 
 function MyFooter() {
   const section = useLocation();
@@ -30,7 +31,9 @@ function MyFooter() {
         <div className="contact-info">
           <p>Indirizzo: Via Napoli, Napoli</p>
           <p>Email: simoneschioppo@icloud.com</p>
-          <p><a href="https://github.com" target='_blank' rel='noopener noreferrer'><img src="github.svg" alt='GitHub Icon'/></a></p>
+          <a href="https://github.com/simoneschioppo98/capstone" target="_blank">
+          <GithubOutlined className="icon-style" />
+          </a>
         </div>
       </div>
       <div className="footer-bottom">

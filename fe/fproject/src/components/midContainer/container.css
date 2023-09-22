@@ -6,5 +6,6 @@
 @media (max-width:768px){
    .mid-container{
     position: relative;
+    height: 600px;
    }
 }

@@ -126,12 +126,12 @@ function MeteoStatus({ data, temperatureScale }) {
               </div>
               <div className="inner-details">
               <span class="material-symbols-outlined">humidity_percentage</span>
-                <p>pressione atmosferica</p>
+                <p>umidità</p>
                 <span>{humidity} %</span>
               </div>
               <div className="inner-details">
               <span class="material-symbols-outlined">visibility</span>
-                <p>pressione atmosferica</p>
+                <p>visbilità</p>
                 <span>{realVisibility}KM</span>
               </div>
           </div>

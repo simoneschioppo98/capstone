@@ -39,4 +39,8 @@
   .footer-links ul li a:hover {
     text-decoration: underline;
   }
-  
+
+  .icon-style{
+    font-size: 50px;
+    color: black;
+  }
