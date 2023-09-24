@@ -1,10 +1,10 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import bcrypt from 'bcryptjs';
 
 function LoginAcces (){
     const [email,setEmail]=useState();
@@ -13,6 +13,11 @@ function LoginAcces (){
 
      const handleSubmit = (e) =>{
         e.preventDefault()
+
+        if(!email || !password){
+          alert("compila entrambi i campi per effettuare il login");
+          return;
+        }
         axios.post('http://localhost:7997/login', { email, password})
         .then(result => {console.log(result)
             if(result.data === 'perfetto'){
@@ -34,15 +39,9 @@ function LoginAcces (){
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} />
         </Form.Group>
-
-        <Link to="/correctProfile">
           <Button variant="primary" type="submit">
             Login
           </Button>
-        </Link>
-          <Button variant="secondary" type="submit">
-            Register
-          </Button> 
       </Form>
     )
 }

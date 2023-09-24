@@ -16,6 +16,18 @@ function ProfileContainer() {
 
      const handleSubmit = (e) =>{
         e.preventDefault()
+      // gestione ca,pi vuoti
+      if(!name || !email || !password){
+        alert("compila tutti i campi per registrarti correttamente");
+        return;
+      }
+      // gestione per una corretta formattazione email
+      const emailVerification=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if(!emailVerification.test(email)){
+        alert("inserisci un formato email valido");
+        return;
+      }
+
         axios.post('http://localhost:7997/register', {name, email, password})
         .then(result => {console.log(result)
         navigate('/login')})
@@ -44,7 +56,7 @@ function ProfileContainer() {
           <Form.Control type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} />
         </Form.Group>
 
-        <Link to="/correctProfile">
+        <Link to="/login">
           <Button variant="primary" type="submit">
             Login
           </Button>
