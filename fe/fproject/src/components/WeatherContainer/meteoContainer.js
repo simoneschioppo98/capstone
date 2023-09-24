@@ -38,7 +38,7 @@ function MeteoContainer() {
           value={cityName}
           onChange={e => setCityName(e.target.value)}
         />
-        <button onClick={getMeteoInfo} className="info-button">Search Informations</button>
+        <button onClick={getMeteoInfo} className="info-button">Search</button>
         <Switch
           checkedChildren="C"
           unCheckedChildren="F"

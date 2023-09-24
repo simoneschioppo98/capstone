@@ -31,7 +31,7 @@ function MyFooter() {
         <div className="contact-info">
           <p>Indirizzo: Via Napoli, Napoli</p>
           <p>Email: simoneschioppo@icloud.com</p>
-          <a href="https://github.com/simoneschioppo98/capstone" target="_blank">
+          <a href="https://github.com/simoneschioppo98/capstone" target="_blank" rel="noreferrer noopener">
           <GithubOutlined className="icon-style" />
           </a>
         </div>

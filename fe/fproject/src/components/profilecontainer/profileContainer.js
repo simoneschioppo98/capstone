@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
+
 
 
 function ProfileContainer() {
@@ -65,6 +68,19 @@ function ProfileContainer() {
             Register
           </Button> 
       </Form>
+      <div>
+        <GoogleOAuthProvider clientId="810688995627-c3vgl50n98l3gsehc06k4ct99dn8nc0o.apps.googleusercontent.com">
+                  <GoogleLogin
+            onSuccess={credentialResponse => {
+              console.log(credentialResponse);
+              navigate('/correctProfile');
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
+        </GoogleOAuthProvider>
+      </div>
     </div>
   );
 }

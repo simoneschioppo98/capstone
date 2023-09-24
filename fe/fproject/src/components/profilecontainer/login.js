@@ -4,7 +4,6 @@ import Form from 'react-bootstrap/Form';
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import bcrypt from 'bcryptjs';
 
 function LoginAcces (){
     const [email,setEmail]=useState();
@@ -19,11 +18,19 @@ function LoginAcces (){
           return;
         }
         axios.post('http://localhost:7997/login', { email, password})
-        .then(result => {console.log(result)
+        .then(result => {
+            console.log(result)
             if(result.data === 'perfetto'){
-                navigate('/correctProfile')   
-            }})
-        .catch(err => console.log(err))
+                navigate('/correctProfile');   
+            } else {
+                alert("Accesso non riuscito. Verifica le tue credenziali.");
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            alert('Errore durante il login. Riprova più tardi.');
+        });
+    
      }
     return(
         <Form onSubmit={handleSubmit}>

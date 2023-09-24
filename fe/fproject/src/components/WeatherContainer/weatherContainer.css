@@ -4,13 +4,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('sfondometeo.jpg');
+    background-size: cover;
+
   }
   
   .form {
-    margin: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 75px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    background-color: rgb(196, 196, 199);
   }
   
   .form>input{
@@ -18,7 +25,11 @@
     padding: 5px 6px;
     text-align: center;
     width: 300px;
-    
+  }
+
+  .form>input::placeholder{
+    color: black;
+    font-weight: 600;
   }
 
   .info-button{
@@ -37,7 +48,16 @@
 
 
   @media (max-width:769px){
-    .form>button{
+    .meteo-container{
+      background-image: none;
+      background-color: bisque;
+    }
+    .form>input{
+      width: 150px;
+    }
     
+    .info-button{
+      width: 70px;
+      margin-left: 0px;
     }
   }
