@@ -1,8 +1,20 @@
-.nav-color{
-    background-color: linear-gradient(to bottom, #0d6efd, #0360f9, #0d51f4, #1d40ee, #2c2ce7);
+.nav{
+    background-image: linear-gradient(to bottom, #0d6efd, #0360f9, #0d51f4, #1d40ee, #2c2ce7);
 }
 
 .text-white{
     font-weight: bold;
     font-size: 25px;
+}
+
+.flex-content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dropdown-style>a{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
 }

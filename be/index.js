@@ -4,15 +4,19 @@ const cors = require('cors');
 const PORT = 7997;
 const RegistrationModel = require('./models/registration');
 
+const dotenv = require('dotenv').config();
+
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://simoneschioppo:hiEYaFxsxnNbehZS@simone-epicode.uibfskc.mongodb.net/registration', {
+
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 
 app.post('/login',(req, res)=>{
     const{email, password}= req.body;
@@ -41,5 +45,3 @@ app.post('/register', (req, res) => {
     .then(registration => res.json(registration))
     .catch(err => res.json(err));
 });
-
-

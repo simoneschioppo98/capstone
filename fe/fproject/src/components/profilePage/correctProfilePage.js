@@ -1,14 +1,13 @@
 import React from "react";
 import MyLogo from '../logo/Logo';
-import MyNavbar from '../nav/Navbar';
 import MyFooter from '../footer/myfooter';
-import { Link } from "react-router-dom";
+import CorrectNavbar from "../nav/profileNavbar";
 
 function CorrectProfilePage(){
     return(
         <>
         <MyLogo/>
-        <MyNavbar/>
+        <CorrectNavbar/>
         <MyFooter/>
         </>
     )
