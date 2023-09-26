@@ -16,6 +16,7 @@ function ProfileContainer() {
      const [email,setEmail]=useState();
      const [password,setPassword]=useState();
      const navigate = useNavigate();
+     
 
      const handleSubmit = (e) =>{
         e.preventDefault()
@@ -35,19 +36,21 @@ function ProfileContainer() {
         .then(result => {console.log(result)
         navigate('/login')})
         .catch(err => console.log(err))
+        window.location.reload();
      }
 
 
   return (
     <div className="profile-container-style">
+      <div className="form-box">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
+          <Form.Label>Nome</Form.Label>
           <Form.Control type="text" placeholder="Enter name" onChange={(e) => setName(e.target.value)}/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control type="email" placeholder="Enter email"  onChange={(e) => setEmail(e.target.value)}/>
         </Form.Group>
 
@@ -55,17 +58,12 @@ function ProfileContainer() {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} />
         </Form.Group>
-
-        <Link to="/login">
-          <Button variant="primary" type="submit">
-            Login
-          </Button>
-        </Link>
-          <Button variant="secondary" type="submit">
-            Register
+          <Button variant="secondary" type="submit" className="form-button-two">
+            Registrati
           </Button> 
       </Form>
-      <div>
+      <span>oppure</span>
+      <div className="google-auth">
         <GoogleOAuthProvider clientId="810688995627-c3vgl50n98l3gsehc06k4ct99dn8nc0o.apps.googleusercontent.com">
                   <GoogleLogin
             onSuccess={credentialResponse => {
@@ -77,7 +75,16 @@ function ProfileContainer() {
             }}
           />
         </GoogleOAuthProvider>
+        </div>
       </div>
+      <div className="already-user">
+          <span>sei gia un utente? clicca su</span>
+          <Link to="/login">
+          <span variant="primary" type="submit" className="form-span-one">
+            Login
+          </span>
+        </Link>
+        </div>
     </div>
   );
 }

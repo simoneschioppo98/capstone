@@ -78,6 +78,7 @@ hr{
 
   .flight-times{
     display: flex;
+    margin-right: 25px;
   }
 
 

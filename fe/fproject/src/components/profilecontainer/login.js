@@ -1,9 +1,11 @@
 import React from "react";
+import "./login.css"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logocap from "./logocapstone copia.png";
 
 function LoginAcces (){
     const [email,setEmail]=useState();
@@ -23,6 +25,7 @@ function LoginAcces (){
             if(result.data === 'perfetto'){
               localStorage.setItem('userLoggedIn', JSON.stringify({ email }));
                 navigate('/correctProfile');   
+                window.location.reload();
             } else {
                 alert("Accesso non riuscito. Verifica le tue credenziali.");
             }
@@ -34,6 +37,10 @@ function LoginAcces (){
     
      }
     return(
+      <div className="body-login">
+           <img src={logocap} alt="logo" className="logo-edit"/>
+           <h1 className="welcome">Welcome Back!</h1>
+        <div className="form-login">
         <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -48,6 +55,8 @@ function LoginAcces (){
             Login
           </Button>
       </Form>
+      </div>
+    </div>
     )
 }
 
