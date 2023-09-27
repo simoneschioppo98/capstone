@@ -36,7 +36,6 @@ function ProfileContainer() {
         .then(result => {console.log(result)
         navigate('/login')})
         .catch(err => console.log(err))
-        window.location.reload();
      }
 
 

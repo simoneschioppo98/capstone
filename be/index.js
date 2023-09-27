@@ -45,3 +45,5 @@ app.post('/register', (req, res) => {
     .then(registration => res.json(registration))
     .catch(err => res.json(err));
 });
+
+

@@ -25,7 +25,6 @@ function LoginAcces (){
             if(result.data === 'perfetto'){
               localStorage.setItem('userLoggedIn', JSON.stringify({ email }));
                 navigate('/correctProfile');   
-                window.location.reload();
             } else {
                 alert("Accesso non riuscito. Verifica le tue credenziali.");
             }

@@ -1,7 +1,8 @@
-import React from 'react';
+import React , {useEffect}from 'react';
 import './flightinfo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
+
 
 function FlightInfo({ data }) {
   // Estrai le informazioni desiderate dai dati della chiamata API
@@ -36,7 +37,24 @@ function FlightInfo({ data }) {
       statusText = "Not Departed";
       break;
   }
+ 
+  
+  const saveFlightData = () => {
+    if (data) {
+      // Salva l'intero oggetto data nei dati del volo nel localStorage
+      localStorage.setItem('flightData', JSON.stringify(data));
+      alert('Dati del volo salvati con successo!');
+    }
+  };
 
+  useEffect(() => {
+    if (data) {
+      // Salva i dati nel localStorage quando i dati cambiano
+      saveFlightData();
+    }
+  }, [data]);
+  
+  
   return (
      <div className='results'>
       <div className='top-info'>
@@ -82,6 +100,7 @@ function FlightInfo({ data }) {
               <p>actual</p>
               <span>{actualArrival}</span>
             </div>
+            <div><button className='save-button' onClick={saveFlightData}>Salva il tuo volo</button></div>
         </div>
       </div>
     </div>
