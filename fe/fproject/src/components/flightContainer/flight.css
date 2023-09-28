@@ -9,7 +9,16 @@
     align-items: center;
     background-size: cover;
   }
-  
+  .introduction>h1{
+    color: #000080;
+      font-size: 50px;
+      text-align: center;
+  }
+  .introduction>p{
+    color: #000080;
+    font-size: 35px;
+    font-weight: bolder;
+  }
 .medium-container{
   background-color: #b4b8bf;
   height: 100px;
@@ -59,6 +68,10 @@
     background-image: url(cloud.jpg);
   }
 
+  .introduction{
+    display: none;
+  }
+  
   .inner-container {
     display: flex;
     flex-direction: column;

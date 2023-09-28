@@ -31,6 +31,10 @@ function FlightSearch() {
 
   return (
     <div className="central">
+      <div className='introduction'>
+          <h1>FullStackSky</h1>
+          <p>Flightracker veloce e intuitivo per non perdere nessun volo! </p>
+      </div>
       <div className='medium-container'>
         <div className="inner-container">
           <input className='field'

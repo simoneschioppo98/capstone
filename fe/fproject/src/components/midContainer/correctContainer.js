@@ -27,6 +27,8 @@ function CorrectContainer(props) {
 
   return (
     <div className="profile-div">
+        <h1>BENVENUTO!</h1>
+        <h3>il tuo volo salvato:</h3>
       {savedFlightData.map((flight, index) => (
         <div key={index} className='saved-response'>
             <div className="up-info">
@@ -37,7 +39,7 @@ function CorrectContainer(props) {
             </div>
             <div className="inner-top-info">
                 <p>Route</p>
-                <span>{flight.flightStatuses[0].departureAirportFsCode} -> </span>
+                <span>{flight.flightStatuses[0].departureAirportFsCode} - </span>
                 <span>{flight.flightStatuses[0].arrivalAirportFsCode}</span>
             </div>
             </div>

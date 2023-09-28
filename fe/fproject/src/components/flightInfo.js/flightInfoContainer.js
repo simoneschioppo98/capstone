@@ -43,7 +43,7 @@ function FlightInfo({ data }) {
     if (data) {
       // Salva l'intero oggetto data nei dati del volo nel localStorage
       localStorage.setItem('flightData', JSON.stringify(data));
-      alert('Dati del volo salvati con successo!');
+     
     }
   };
 
@@ -100,9 +100,9 @@ function FlightInfo({ data }) {
               <p>actual</p>
               <span>{actualArrival}</span>
             </div>
-            <div><button className='save-button' onClick={saveFlightData}>Salva il tuo volo</button></div>
         </div>
       </div>
+      <div className='save-button-container'><button className='save-button' onClick={() => { saveFlightData(); alert('Dati del volo salvati con successo!'); }}>Salva il tuo volo</button></div>
     </div>
       
   );

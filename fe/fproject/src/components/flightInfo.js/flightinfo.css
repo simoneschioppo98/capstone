@@ -31,6 +31,7 @@ hr{
     font-size: 20px;
     font-weight: bold;
     padding: 25px;
+    margin-bottom: -1px;
   }
   
   .status-in-air {
@@ -39,6 +40,7 @@ hr{
     font-size: 20px;
     font-weight: bold;
     padding: 25px;
+    margin-bottom: -1px;
   }
   
   .status-scheduled {
@@ -47,6 +49,7 @@ hr{
     font-size: 20px;
     font-weight: bold;
     padding: 25px;
+    margin-bottom: -1px;
   }
 
   .left{
@@ -93,4 +96,37 @@ hr{
   .flight-time:first-child{
     margin-left: 55px;
     border-right: 1px solid black;
+  }
+
+  .save-button-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .save-button{
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .save-button:hover{
+    font-size: 25px;
+    transition: .5s ease;
+  }
+
+
+  @media(max-width:769px){
+    .results{
+      display: flex;
+      flex-direction: column;
+    }
+    .top-info{
+      width: 375px;
+      margin: auto;
+    }
+
   }

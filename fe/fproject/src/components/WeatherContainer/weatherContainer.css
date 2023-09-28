@@ -17,7 +17,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: rgb(196, 196, 199);
+    background-color: rgb(196, 196, 199);opacity: 0.8;
   }
   
   .form>input{
