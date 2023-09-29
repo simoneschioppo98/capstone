@@ -10,6 +10,8 @@ function MeteoContainer() {
   const [weatherData, setWeatherData] = useState(null);
   const [temperatureScale, setTemperatureScale] = useState("Celsius");
 
+
+  // chiamata axios per ritornare i giusti dati meteo dalle API
   const getMeteoInfo = () => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=0a9433c5f8afc8a2e802c91678a55eb8`)
       .then(response => {
@@ -21,6 +23,7 @@ function MeteoContainer() {
       });
   }
 
+  // funzione per rendere il pulsante switch dinamico e cambiare metrica dei gradi
   const toggleTemperatureScale = () => {
     if (temperatureScale === "Celsius") {
       setTemperatureScale("Fahrenheit");

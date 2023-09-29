@@ -14,9 +14,9 @@ function FlightInfo({ data }) {
   const middleDeparture = data?.flightStatuses[0]?.departureAirportFsCode;
   const middleArrival = data?.flightStatuses[0]?.arrivalAirportFsCode;
   const departureDate = data?.flightStatuses[0]?.departureDate.dateLocal;
-  const actualDeparture = data?.flightStatuses[0]?.operationalTimes?.actualGateDeparture.dateLocal;
+  const actualDeparture = data?.flightStatuses[0]?.operationalTimes?.actualGateDeparture?.dateLocal ?? 'N/D';
   const arrivalDate = data?.flightStatuses[0]?.arrivalDate.dateLocal;
-  const actualArrival = data?.flightStatuses[0]?.operationalTimes?.actualGateArrival.dateLocal;
+  const actualArrival = data?.flightStatuses[0]?.operationalTimes?.actualGateArrival?.dateLocal ?? 'N/D';
 
 
   

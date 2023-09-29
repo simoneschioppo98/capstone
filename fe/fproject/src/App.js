@@ -8,6 +8,8 @@ import MyProfilePage from './components/profilePage/profilePage';
 import LoginAcces from './components/profilecontainer/login';
 import CorrectProfilePage from './components/profilePage/correctProfilePage';
 
+
+// app principale contenenti tutte le rotte designate
 function App() {
   return (
     <>

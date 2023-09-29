@@ -4,6 +4,8 @@ import MyNavbar from "../nav/Navbar";
 import CentralContainer from "../midContainer/container";
 import MyFooter from "../footer/myfooter";
 
+
+// definizio pagina HOME
 function FirstPage(){
     return(
         <>

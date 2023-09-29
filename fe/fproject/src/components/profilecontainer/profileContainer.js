@@ -20,7 +20,7 @@ function ProfileContainer() {
 
      const handleSubmit = (e) =>{
         e.preventDefault()
-      // gestione ca,pi vuoti
+      // gestione campi vuoti
       if(!name || !email || !password){
         alert("compila tutti i campi per registrarti correttamente");
         return;
@@ -32,6 +32,7 @@ function ProfileContainer() {
         return;
       }
 
+      //chiamata al backend per immettere i dati registrati in questo form al database di mongodb
         axios.post('http://localhost:7997/register', {name, email, password})
         .then(result => {console.log(result)
         navigate('/login')})

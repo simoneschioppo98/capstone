@@ -2,24 +2,22 @@ import React, { useState, useEffect } from "react";
 import './correctContainer.css';
 
 function CorrectContainer(props) {
-  // Destructuring per ottenere i dati del volo dalle props
+  // Destrutturazione per ottenere i dati del volo dalle props
   const { flightData } = props;
-
   // Stato per salvare i dati del volo
   const [savedFlightData, setSavedFlightData] = useState([]);
 
-  // Funzione di callback per ricevere i dati del volo salvati da FlightInfo
   const handleSaveFlightData = () => {
-    // Leggi i dati dal localStorage
+    // lettura dati del localstorage
     const storedFlightData = localStorage.getItem('flightData');
     return storedFlightData ? JSON.parse(storedFlightData) : null;
   };
 
   useEffect(() => {
-    // Leggi i dati salvati dal localStorage all'avvio del componente
+    // Lettura dei dati salvati dal localStorage all'avvio del componente
     const savedData = handleSaveFlightData();
     if (savedData) {
-      // Aggiungi i dati al tuo array di savedFlightData
+      // Aggiunta dei dati all'array di savedFlightData
       setSavedFlightData([savedData]);
       console.log([savedData])
     }

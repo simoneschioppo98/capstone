@@ -10,6 +10,7 @@ import axios from "axios";
 function CorrectNavbar() {
     const navigate = useNavigate();
 
+    // navbar del profilo: sotto troviamo una funzione per eseguire il logout dalla pagina
     const logRemover= ()=>{
         localStorage.removeItem('userLoggedIn');
         navigate('/login');

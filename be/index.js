@@ -1,3 +1,4 @@
+// installazione librerie e middleware
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -11,13 +12,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
+//connessione a mongodb
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-
+// gestione risposta login
 app.post('/login',(req, res)=>{
     const{email, password}= req.body;
     RegistrationModel.findOne({email:email})
@@ -32,14 +33,14 @@ app.post('/login',(req, res)=>{
     })
 })
 
-
+// connessione a mongodb
 mongoose.connection.once('open', () => {
   console.log('Connessione al database MongoDB riuscita!');
   app.listen(PORT, () => {
     console.log(`Il server è attivo sulla porta ${PORT}`);
   });
 });
-
+// gestione risposta registrazione
 app.post('/register', (req, res) => {
   RegistrationModel.create(req.body)
     .then(registration => res.json(registration))
